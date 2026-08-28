@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="css/style.css"><title>Products</title></head>
+<body>
+<nav><h2>ScrapeX</h2><div><a href="index.html">Home</a><a href="products.html">Products</a></div></nav>
+<div class="container">
+<h2>All Products</h2>
+<input type="text" id="searchInput" placeholder="Search products...">
+<button class="btn" onclick="exportCSV()">Download CSV</button>
+<button class="btn" style="background:#ef4444" onclick="deleteAll()">Delete All</button>
+<table id="productTable"><thead><tr><th>Name</th><th>Price</th><th>Rating</th><th>Category</th></tr></thead><tbody></tbody></table>
+</div>
+<script src="js/products.js"></script>
+<script src="js/voice-ai.js"></script>
+</body>
+</html>

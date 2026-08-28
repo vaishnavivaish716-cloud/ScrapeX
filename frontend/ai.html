@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>AI Assistant</title><link rel="stylesheet" href="css/style.css"></head>
+<body><nav><h2 style="color:#38bdf8;">ScrapeX + AI</h2><div><a href="index.html">Home</a><a href="ai.html" style="color:#38bdf8;">AI Assistant</a><a href="scrape.html">Scrape</a></div></nav>
+<div class="container" style="max-width:700px"><h1>AI Product Assistant</h1><div class="card" style="margin-top:20px;min-height:400px;display:flex;flex-direction:column"><div id="chat" style="flex:1;overflow-y:auto;margin-bottom:15px"><p style="color:#94a3b8;">Hi da! Naan unga ScrapeX AI. "Top rated product enna?" nu kelu.</p></div><div style="display:flex;gap:10px"><input id="q" placeholder="Ask about your products..." style="flex:1;padding:12px;border-radius:8px;border:none;"><button onclick="ask()" style="padding:12px 20px;background:#38bdf8;border:none;border-radius:8px;cursor:pointer">Ask</button></div></div></div>
+<script>
+async function ask(){
+ let query=document.getElementById("q").value; if(!query) return;
+ let chat=document.getElementById("chat"); chat.innerHTML+=`<p style="margin:10px 0;text-align:right;color:#38bdf8;">You: ${query}</p>`;
+ document.getElementById("q").value="";
+ // Simple AI logic from summary API
+ let res=await fetch("/api/summary"); let data=await res.json();
+ let reply=`Unkita ${data.total_products} products irukku da. Avg Price ₹${data.average_price}, Avg Rating ${data.average_rating}. "${query}" ku ithu than best info!`;
+ if(query.toLowerCase().includes("top")||query.toLowerCase().includes("best")) reply=`Top product price ₹${data.average_price} mela irukku, rating ${data.average_rating} da. Products page la paarunga.`;
+ chat.innerHTML+=`<p style="margin:10px 0;color:#22c55e;">AI: ${reply}</p>`;
+}
+</script>
+<script src="js/voice-ai.js"></script>
+</body></html>

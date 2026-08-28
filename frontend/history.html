@@ -1,0 +1,4 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>History</title><link rel="stylesheet" href="css/style.css"></head>
+<body><nav><h2 style="color:#38bdf8;">ScrapeX</h2><div><a href="index.html">Home</a><a href="products.html">Products</a><a href="scrape.html">Scrape</a><a href="ai.html">AI Assistant</a><a href="history.html" style="color:#38bdf8;">History</a></div></nav>
+<div class="container"><h1>Scraping History</h1><table id="historyTable"><tr><th>URL</th><th>Count</th><th>Date</th></tr></table></div>
+<script>async function load(){let r=await fetch("/api/history");let d=await r.json();let t=document.getElementById("historyTable");d.forEach(x=>{t.innerHTML+=`<tr><td>${x.url}</td><td>${x.products_count}</td><td>${x.scraped_at}</td></tr>`})}load()</script><script src="js/voice-ai.js"></script></body></html>
