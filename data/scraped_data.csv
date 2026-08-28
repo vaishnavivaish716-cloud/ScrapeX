@@ -1,0 +1,4 @@
+id,title,price,url,scraped_at
+1,iPhone 15,75000,https://example.com/iphone15,2026-05-14
+2,MacBook Air M2,95000,https://example.com/macbook,2026-05-14
+3,Sony Headphones,15000,https://example.com/sony,2026-05-14

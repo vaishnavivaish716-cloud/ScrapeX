@@ -1,0 +1,4 @@
+id,title,price,url,category,status
+1,iPhone 15,75000,https://example.com/iphone15,mobile,cleaned
+2,MacBook Air M2,95000,https://example.com/macbook,laptop,cleaned
+3,Sony Headphones,15000,https://example.com/sony,audio,cleaned
